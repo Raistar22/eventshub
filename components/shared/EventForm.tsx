@@ -9,6 +9,7 @@ import { eventFormSchema } from "@/lib/validator"
 import * as z from 'zod'
 import { eventDefaultValues } from "@/constants"
 import Dropdown from "./Dropdown"
+import Dropdown_location from "./Dropdown_location"
 import { Textarea } from "@/components/ui/textarea"
 import { FileUploader } from "./FileUploader"
 import { useState } from "react"
@@ -169,16 +170,8 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
               render={({ field }) => (
                 <FormItem className="w-full">
                   <FormControl>
-                    <div className="flex-center h-[54px] w-full overflow-hidden rounded-full bg-grey-50 px-4 py-2">
-                      <Image
-                        src="/assets/icons/location-grey.svg"
-                        alt="calendar"
-                        width={24}
-                        height={24}
-                      />
+                  <Dropdown_location onChangeHandler={field.onChange} value={field.value} />
 
-                      <Input placeholder="Event location or Online" {...field} className="input-field" />
-                    </div>
 
                   </FormControl>
                   <FormMessage />
@@ -260,7 +253,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
                   <FormControl>
                     <div className="flex-center h-[54px] w-full overflow-hidden rounded-full bg-grey-50 px-4 py-2">
                       <Image
-                        src="/assets/icons/dollar.svg"
+                        src="/assets/icons/rupee.svg"
                         alt="dollar"
                         width={24}
                         height={24}

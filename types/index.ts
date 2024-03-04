@@ -33,6 +33,7 @@ export type CreateEventParams = {
   path: string
 }
 
+
 export type UpdateEventParams = {
   userId: string
   event: {
@@ -76,6 +77,7 @@ export type GetRelatedEventsByCategoryParams = {
   page: number | string
 }
 
+
 export type Event = {
   _id: string
   title: string
@@ -101,6 +103,9 @@ export type Event = {
 // ====== CATEGORY PARAMS
 export type CreateCategoryParams = {
   categoryName: string
+}
+export type CreateLocationParams = {
+  locationName: string
 }
 
 // ====== ORDER PARAMS
