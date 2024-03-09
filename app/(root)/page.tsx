@@ -5,7 +5,9 @@ import { Button } from '@/components/ui/button'
 import { getAllEvents } from '@/lib/actions/event.actions';
 import { SearchParamProps } from '@/types';
 import Image from 'next/image'
+
 import Link from 'next/link'
+
 
 export default async function Home({ searchParams }: SearchParamProps) {
   const page = Number(searchParams?.page) || 1;
@@ -21,6 +23,18 @@ export default async function Home({ searchParams }: SearchParamProps) {
 
   return (
     <>
+     <section className="bg-primary-50 bg-dotted-pattern bg-contain py-5 md:py-10">
+        <Image
+          src="/assets/images/bannergif.gif"
+          alt="banner"
+          width={10000}
+          height={10000}
+          className="banimg"
+          
+        />
+
+          
+      </section> 
       <section className="bg-primary-50 bg-dotted-pattern bg-contain py-5 md:py-10">
         <div className="wrapper grid grid-cols-1 gap-5 md:grid-cols-2 2xl:gap-0">
           <div className="flex flex-col justify-center gap-8">
