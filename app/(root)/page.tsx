@@ -23,13 +23,14 @@ export default async function Home({ searchParams }: SearchParamProps) {
 
   return (
     <>
-     <section className="bg-primary-50 bg-dotted-pattern bg-contain py-5 md:py-10">
+     <section className="bg-primary-50 bg-dotted-pattern bg-contain">
         <Image
           src="/assets/images/bannergif.gif"
           alt="banner"
           width={10000}
           height={10000}
           className="banimg"
+          style={{objectFit:'fill'}}
           
         />
 
