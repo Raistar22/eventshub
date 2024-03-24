@@ -4,6 +4,7 @@ import { getEventById, getRelatedEventsByCategory } from '@/lib/actions/event.ac
 import { formatDateTime } from '@/lib/utils';
 import { SearchParamProps } from '@/types'
 import Image from 'next/image';
+import Link from 'next/link';
 
 const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) => {
   const event = await getEventById(id);
@@ -73,7 +74,11 @@ const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) 
           <div className="flex flex-col gap-2">
             <p className="p-bold-20 text-grey-600">What You'll Learn:</p>
             <p className="p-medium-16 lg:p-regular-18">{event.description}</p>
-            <p className="p-medium-16 lg:p-regular-18 truncate text-primary-500 underline">{event.url}</p>
+            <Link
+            href={event.url}
+            target='_blank'>
+              <p className="p-medium-16 lg:p-regular-18 truncate text-primary-500 underline">{event.url}</p>
+            </Link>
           </div>
         </div>
       </div>
